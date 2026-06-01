@@ -23,3 +23,5 @@
  */
 
 $string['pluginname'] = 'immediate feedback for AI grading';
+$string['privacy:metadata'] = 'The immediate feedback for AI grading behaviour plugin does not store any personal data. AI-generated grading data is stored as question attempt step data, which is managed by the core question engine privacy provider.';
+$string['spellcheckeditaction'] = 'Teacher edited spellcheck';
