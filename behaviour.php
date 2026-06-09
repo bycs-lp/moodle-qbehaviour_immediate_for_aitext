@@ -158,7 +158,7 @@ class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
      */
     public function summarise_action(question_attempt_step $step) {
         if ($step->has_behaviour_var('spellcheckedit')) {
-            return get_string('spellcheckeditaction', 'qbehaviour_deferred_adapted_for_aitext');
+            return get_string('spellcheckeditaction', 'qbehaviour_immediate_for_aitext');
         }
         return parent::summarise_action($step);
     }
