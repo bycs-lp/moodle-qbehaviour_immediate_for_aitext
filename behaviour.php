@@ -113,8 +113,9 @@ class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
         $question = $this->question;
 
         if (isset($question->lastaicomment) && $question->lastaicomment !== null) {
+            // The AI comment is always HTML; the renderer hard-codes FORMAT_HTML when
+            // displaying it, so no separate _commentformat var is persisted.
             $pendingstep->set_behaviour_var('_comment', $question->lastaicomment);
-            $pendingstep->set_behaviour_var('_commentformat', (string) FORMAT_HTML);
         }
 
         if (isset($question->lastaiprompt) && $question->lastaiprompt !== null) {
