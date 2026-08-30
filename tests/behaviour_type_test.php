@@ -34,7 +34,6 @@ require_once(__DIR__ . '/../../../engine/tests/helpers.php');
  * @covers     \qbehaviour_immediate_for_aitext_type
  */
 final class behaviour_type_test extends \basic_testcase {
-
     /** @var \qbehaviour_immediate_for_aitext_type */
     protected $behaviourtype;
 

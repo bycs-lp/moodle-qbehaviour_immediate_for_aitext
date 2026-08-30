@@ -48,7 +48,6 @@ require_once($CFG->dirroot . '/question/behaviour/immediatefeedback/behaviour.ph
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
-
     /**
      * Only compatible with qtype_aitext_question instances.
      *
@@ -148,9 +147,10 @@ class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
     }
 
     /**
-     * The step has a 'spellcheckedit' behaviour variable, meaning the teacher has submitted an edited version of the student's response
-     * after using the ai spellcheck feature. We want to keep the step and update its state and fraction to match the current state of the attempt,
-     * since they do not change but we want to persist the edited response for display in the renderer.
+     * The step has a 'spellcheckedit' behaviour variable, meaning the teacher has submitted an edited
+     * version of the student's response after using the ai spellcheck feature. We want to keep the step
+     * and update its state and fraction to match the current state of the attempt, since they do not
+     * change but we want to persist the edited response for display in the renderer.
      * @param question_attempt_pending_step $pendingstep
      * @return bool
      */
@@ -176,5 +176,4 @@ class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
         }
         return parent::summarise_action($step);
     }
-
 }

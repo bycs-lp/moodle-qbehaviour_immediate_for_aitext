@@ -30,7 +30,6 @@ require_once(__DIR__ . '/../immediatefeedback/behaviourtype.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qbehaviour_immediate_for_aitext_type extends qbehaviour_immediatefeedback_type {
-
     /**
      * This behaviour is not archetypal — it should not appear in quiz settings.
      *

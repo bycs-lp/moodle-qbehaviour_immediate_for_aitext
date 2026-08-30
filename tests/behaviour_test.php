@@ -14,6 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Unit tests for the immediate_for_aitext question behaviour.
+ *
+ * @package    qbehaviour_immediate_for_aitext
+ * @category   test
+ * @copyright  2026 ISB Bayern
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 namespace qbehaviour_immediate_for_aitext;
 
 use question_attempt;
@@ -28,6 +37,9 @@ require_once(__DIR__ . '/../../../engine/lib.php');
 require_once(__DIR__ . '/../../../engine/tests/helpers.php');
 require_once(__DIR__ . '/../behaviour.php');
 
+// This test file intentionally declares a test-double class alongside the testcase.
+// phpcs:disable PSR1.Classes.ClassDeclaration.MultipleClasses
+
 /**
  * Test double that bypasses the question_behaviour constructor and exposes the
  * protected methods and properties under test.
@@ -37,7 +49,9 @@ require_once(__DIR__ . '/../behaviour.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class testable_immediate_for_aitext extends \qbehaviour_immediate_for_aitext {
-    // phpcs:ignore moodle.Commenting.MissingDocblock.Constructor
+    /**
+     * Bypass the parent constructor; the tests inject dependencies directly.
+     */
     public function __construct() {
         // Deliberately skip the parent constructor: these unit tests inject
         // the $qa and $question dependencies directly.
@@ -87,7 +101,6 @@ class testable_immediate_for_aitext extends \qbehaviour_immediate_for_aitext {
  * @covers     \qbehaviour_immediate_for_aitext
  */
 final class behaviour_test extends \basic_testcase {
-
     /**
      * apply_ai_results_to_step() copies the AI results cached on the question
      * onto the pending step as cached behaviour variables.
