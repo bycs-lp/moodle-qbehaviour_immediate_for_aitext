@@ -213,7 +213,11 @@ class qbehaviour_immediate_for_aitext_renderer extends qbehaviour_immediatefeedb
                 $output .= get_string(
                     'commentx',
                     'question',
-                    format_text($aicomment, FORMAT_HTML, ['context' => $options->context])
+                    \qtype_aitext\comment_formatter::to_html(
+                        $aicomment,
+                        $qa->get_last_behaviour_var('_commentformat'),
+                        $options->context,
+                    ),
                 );
             }
         }

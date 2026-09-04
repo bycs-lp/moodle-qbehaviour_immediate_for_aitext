@@ -118,10 +118,9 @@ final class behaviour_test extends \basic_testcase {
         $behaviour->public_apply_ai_results_to_step($step);
 
         $this->assertSame('Well argued.', $step->get_behaviour_var('_comment'));
+        $this->assertSame((string) FORMAT_MARKDOWN, $step->get_behaviour_var('_commentformat'));
         $this->assertSame('Grade this essay: ...', $step->get_behaviour_var('_aiprompt'));
         $this->assertSame('No spelling errors.', $step->get_behaviour_var('_spellcheckresponse'));
-        // The dead _commentformat var was removed and must not be persisted.
-        $this->assertFalse($step->has_behaviour_var('_commentformat'));
     }
 
     /**
